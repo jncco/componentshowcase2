@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import M003_CTA_DS01v001, { type M003_CTA_DS01v001Props } from '../components/M003_CTA_DS01v001';
+
+const props: M003_CTA_DS01v001Props = {
+    textList: ["Primary Text", "Secondary Text", "Tertiary Text", "4th Text"],
+    linkList: [
+        {
+            target: "_blank",
+            ref: "https://www.google.com",
+            type: "custom",
+            title: "Go To Google",
+        },
+    ],
+    imageList: [
+        {
+            id: 1,
+            alt: "Example Image",
+            url: "",
+            thumbnailURL: "",
+            width: 0,
+            height: 0,
+        },
+        {
+            id: 1,
+            alt: "Example Image",
+            url: "https://images.pexels.com/photos/6373086/pexels-photo-6373086.jpeg",
+            thumbnailURL: "https://via.placeholder.com/50",
+            width: 150,
+            height: 150,
+        },
+    ],
+    iconList: [{
+        id: 1,
+        url: "https://www.svgrepo.com/show/358443/down-arrow.svg",
+        width: 24,
+        height: 24
+    }],
+    cssList: [""],
+};
+---
+
+<Layout>
+    <M003_CTA_DS01v001 {...props} />
+</Layout>

@@ -1,0 +1,51 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700;800&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap'); */
+@import 'tailwindcss';
+
+@theme {
+  --color-primary-100: #d9ffb8;
+  --color-primary-300: #a6d684;
+  --color-primary-500: #7ac147;
+  --color-primary-700: #527f2f;
+  --color-secondary: #5a3278;
+  --color-secondary-300: #af87cd;
+  --color-secondary-400: #9b69c0;
+  --color-secondary-500: #874bb4;
+  --color-secondary-700: #5a3278;
+  --color-neutro-50: #ffffff;
+  --color-neutro-100: #f5f5f5;
+  --color-neutro-300: #b4b4b4;
+  --color-neutro-700: #6e6e6e;
+  --color-neutro-900: #333333;
+  --breakpoint-3xl: 160rem;
+}
+
+@layer base {
+  html {
+    font-family: 'Source Sans 3', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--color-neutro-700);
+  }
+}
+
+@layer utilities {
+  .penultimate\:border-b-0:nth-last-child(2) {
+    border-bottom-width: 0;
+  }
+}
+
+.panel {
+  transform: translateX(100%);
+}
+.panel.active {
+  transform: translateX(0);
+}
+.panel.slide-out-left {
+  transform: translateX(-100%);
+}
+
+/* THEME SHOULD BE DEFINED HERE */
+
+/* Check to add this conditionally only when not in prod. */
+@source inline('{dark:,}{bg,text}-{slate,gray,zinc,neutral,stone,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose}-{50,{100..900..100},950}');
+/* @source inline('{rounded}-{}'); */

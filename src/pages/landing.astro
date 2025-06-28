@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection';
+import AppDownloadSection from '../components/AppDownloadSection';
+import HappyCustomersSection from '../components/HappyCustomersSection';
+import FeaturesSection from '../components/FeaturesSection';
+import WhatsAppContactSection from '../components/WhatsAppContactSection';
+import ContentCardsSection from '../components/ContentCardsSection';
+import CTASection from '../components/CTASection';
+import Footer from '../components/Footer';
+
+// Sample data - you can replace with actual content
+const heroData = {
+  title: "We have the best for you!",
+  subtitle: "Connect and feel the love",
+  ctaText: "Contact now",
+  ctaLink: "#contact",
+  backgroundImage: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+};
+
+const appDownloadData = {
+  title: "use our App Get it free",
+  subtitle: "Download our mobile app and stay connected wherever you are. Get instant access to all our services.",
+  ctaText: "Download App",
+  ctaLink: "#download",
+  phoneImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+};
+
+const happyCustomersData = {
+  title: "Happy customers",
+  subtitle: "Our customers love what we do and we're proud to serve them with excellence every day.",
+  customerImage: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  rating: "5.0",
+  ratingText: "Based on 1000+ reviews"
+};
+
+const featuresData = {
+  title: "Choose the better option",
+  features: [
+    {
+      icon: "https://img.icons8.com/ios/50/000000/star.png",
+      title: "Premium Quality",
+      description: "We provide the highest quality service for our customers"
+    },
+    {
+      icon: "https://img.icons8.com/ios/50/000000/clock.png",
+      title: "24/7 Support",
+      description: "Round the clock customer support whenever you need us"
+    },
+    {
+      icon: "https://img.icons8.com/ios/50/000000/shield.png",
+      title: "Secure & Safe",
+      description: "Your data and privacy are completely secure with us"
+    },
+    {
+      icon: "https://img.icons8.com/ios/50/000000/fast-forward.png",
+      title: "Fast Delivery",
+      description: "Quick and efficient delivery of all our services"
+    }
+  ]
+};
+
+const whatsappContactData = {
+  title: "Talk to us, use WhatsApp",
+  subtitle: "Get in touch with us through WhatsApp for instant support",
+  backgroundImage: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+  contactOptions: [
+    {
+      icon: "https://img.icons8.com/ios/50/ffffff/whatsapp.png",
+      title: "Sales Team",
+      subtitle: "For product inquiries",
+      link: "https://wa.me/1234567890"
+    },
+    {
+      icon: "https://img.icons8.com/ios/50/ffffff/customer-support.png",
+      title: "Support Team",
+      subtitle: "For technical support",
+      link: "https://wa.me/1234567891"
+    },
+    {
+      icon: "https://img.icons8.com/ios/50/ffffff/business.png",
+      title: "Business Team",
+      subtitle: "For partnerships",
+      link: "https://wa.me/1234567892"
+    }
+  ]
+};
+
+const contentCardsData = {
+  title: "Mauris cursus vulputate",
+  cards: [
+    {
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      title: "Instagram",
+      description: "Follow us on Instagram for daily updates and behind-the-scenes content.",
+      ctaText: "Follow",
+      ctaLink: "#instagram"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      title: "Facebook",
+      description: "Join our Facebook community and connect with other users.",
+      ctaText: "Join",
+      ctaLink: "#facebook"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1551651120-0169b5c75ac1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      title: "Business",
+      description: "Learn more about our business solutions and enterprise offerings.",
+      ctaText: "Learn More",
+      ctaLink: "#business"
+    }
+  ]
+};
+
+const finalCTAData = {
+  title: "Let the force Be with you and all",
+  subtitle: "Ready to get started? Join thousands of satisfied customers today.",
+  ctaText: "Get Started Now",
+  ctaLink: "#signup",
+  backgroundImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+};
+
+const footerData = {
+  companyName: "Your Company",
+  description: "We're dedicated to providing the best service and connecting people around the world.",
+  sections: [
+    {
+      title: "Product",
+      links: [
+        { title: "Features", href: "#features" },
+        { title: "Pricing", href: "#pricing" },
+        { title: "Downloads", href: "#downloads" }
+      ]
+    },
+    {
+      title: "Company",
+      links: [
+        { title: "About", href: "#about" },
+        { title: "Careers", href: "#careers" },
+        { title: "Contact", href: "#contact" }
+      ]
+    },
+    {
+      title: "Support",
+      links: [
+        { title: "Help Center", href: "#help" },
+        { title: "Community", href: "#community" },
+        { title: "Documentation", href: "#docs" }
+      ]
+    }
+  ],
+  socialLinks: [
+    { title: "Facebook", href: "#facebook" },
+    { title: "Twitter", href: "#twitter" },
+    { title: "Instagram", href: "#instagram" }
+  ],
+  copyright: "© 2024 Your Company. All rights reserved."
+};
+---
+
+<Layout>
+  <HeroSection 
+    title={heroData.title}
+    subtitle={heroData.subtitle}
+    ctaText={heroData.ctaText}
+    ctaLink={heroData.ctaLink}
+    backgroundImage={heroData.backgroundImage}
+    client:load
+  />
+  
+  <AppDownloadSection 
+    title={appDownloadData.title}
+    subtitle={appDownloadData.subtitle}
+    ctaText={appDownloadData.ctaText}
+    ctaLink={appDownloadData.ctaLink}
+    phoneImage={appDownloadData.phoneImage}
+    client:load
+  />
+  
+  <HappyCustomersSection 
+    title={happyCustomersData.title}
+    subtitle={happyCustomersData.subtitle}
+    customerImage={happyCustomersData.customerImage}
+    rating={happyCustomersData.rating}
+    ratingText={happyCustomersData.ratingText}
+    client:load
+  />
+  
+  <FeaturesSection 
+    title={featuresData.title}
+    features={featuresData.features}
+    client:load
+  />
+  
+  <WhatsAppContactSection 
+    title={whatsappContactData.title}
+    subtitle={whatsappContactData.subtitle}
+    contactOptions={whatsappContactData.contactOptions}
+    backgroundImage={whatsappContactData.backgroundImage}
+    client:load
+  />
+  
+  <ContentCardsSection 
+    title={contentCardsData.title}
+    cards={contentCardsData.cards}
+    client:load
+  />
+  
+  <CTASection 
+    title={finalCTAData.title}
+    subtitle={finalCTAData.subtitle}
+    ctaText={finalCTAData.ctaText}
+    ctaLink={finalCTAData.ctaLink}
+    backgroundImage={finalCTAData.backgroundImage}
+    client:load
+  />
+  
+  <Footer 
+    companyName={footerData.companyName}
+    description={footerData.description}
+    sections={footerData.sections}
+    socialLinks={footerData.socialLinks}
+    copyright={footerData.copyright}
+    client:load
+  />
+</Layout> 
